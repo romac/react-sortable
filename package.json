@@ -31,5 +31,8 @@
     "browserify": "^4.1.5",
     "reactify": "^0.13.1",
     "react": "^0.10.0"
+  },
+  "dependencies": {
+    "lodash.throttle": "^2.4.1"
   }
 }

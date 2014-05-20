@@ -2,6 +2,7 @@
 
 'use strict';
 
+var throttle = require('lodash.throttle');
 var React = require('react');
 var SortableMixin = require('./SortableMixin');
 
@@ -12,19 +13,19 @@ var SortableItem = React.createClass({
     return {
       tagName: 'li',
       style: {},
-      className: ''
+      className: '',
+      throttle: 16
     };
   },
 
   render: function() {
-    return (
+    return this.transferPropsTo(
       React.DOM[this.props.tagName]({
         'data-id': this.props.key,
-        style: this.props.style,
         className: this.props.className + ' ' + this.getClassName(),
         draggable: true,
         onDragEnd: this.sortEnd,
-        onDragOver: this.dragOver,
+        onDragOver: throttle(this.dragOver, +this.props.throttle),
         onDragStart: this.sortStart
       }, this.props.item)
     );
