@@ -3,47 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>React Sortable</title>
-  <link href="stylez.css" rel="stylesheet"/>
+  <link href="css/stylez.css" rel="stylesheet"/>
 </head>
 <body>
 
 <h1>React Sortable</h1>
 <p>View source and documentation on <a href="https://github.com/danielstocks/react-sortable/">Github</a></p>
 
-<div id="app"></div>
-
-<script src="bower_components/react/react.js"></script>
-<script src="bower_components/react/JSXTransformer.js"></script>
-
-<script src="../src/Sortable.js" type="text/jsx"></script>
-<script src="../src/SortableItem.js" type="text/jsx"></script>
-
-<script src="App.js" type="text/jsx"></script>
-<script src="SortableList.js" type="text/jsx"></script>
-<script src="SortableGrid.js" type="text/jsx"></script>
-<script src="StateView.js" type="text/jsx"></script>
-
-<script type="text/jsx">
-/** @jsx React.DOM */
-var data = {
-  colors: [
-    "Gold",
-    "Crimson",
-    "Hotpink",
-    "Blueviolet",
-    "Cornflowerblue",
-    "Skyblue",
-    "Lightblue",
-    "Aquamarine",
-    "Burlywood"
-  ]
-};
-React.renderComponent(
-  <App data={data} />,
-  document.getElementById("app")
-);
-</script>
-
-
+<script src="bundle.js"></script>
 </body>
 </html>

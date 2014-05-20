@@ -1,24 +1,30 @@
 /** @jsx React.DOM */
 
-var Sortable = {
+'use strict';
+
+module.exports = {
   update: function(to, from) {
-    var data = this.props.data.colors;
-    data.splice(to, 0, data.splice(from,1)[0]);
-    this.props.sort(data, to);
+    var items = this.props.items;
+    items.splice(to, 0, items.splice(from, 1)[0]);
+    this.props.sort(items, to);
   },
   sortEnd: function() {
-    this.props.sort(this.props.data.colors, undefined);
+    this.props.sort(this.props.items, undefined);
   },
   sortStart: function(e) {
     this.dragged = e.currentTarget.dataset.id;
     e.dataTransfer.effectAllowed = 'move';
   },
   move: function(over,append) {
-    var to = Number(over.dataset.id);
-    var from = this.props.data.dragging || Number(this.dragged);
-    if(append) to++;
-    if(from < to) to--;
-    this.update(to,from);
+    var to = +over.dataset.id;
+    var from = this.props.dragging || +this.dragged;
+    if(append) {
+      to += 1;
+    }
+    if(from < to) {
+      to -= 1;
+    }
+    this.update(to, from);
   },
   dragOver: function(e) {
     e.preventDefault();
@@ -28,6 +34,6 @@ var Sortable = {
     this.move(over, relY > height);
   },
   getClassName: function() {
-    return this.props.key == this.props.data.dragging ? "dragging" : "";
+    return (this.props.key == this.props.dragging) ? 'dragging' : '';
   }
-}
+};

@@ -1,0 +1,35 @@
+{
+  "name": "react-sortable",
+  "version": "0.1.0",
+  "description": "A React component and mixin for creating sortable interfaces utilizing the HTML5 drag & drop API.",
+  "main": "index.js",
+  "scripts": {
+    "demo": "./node_modules/.bin/browserify -t reactify demo/app.js > demo/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/romac/react-sortable.git"
+  },
+  "keywords": [
+    "react",
+    "sortable"
+  ],
+  "contributors": [
+    "Daniel Stocks <daniel@webcloud.se>",
+    "Romain Ruetschi <romain.ruetschi@gmail.com>"
+  ],
+  "license": "???",
+  "bugs": {
+    "url": "https://github.com/romac/react-sortable/issues"
+  },
+  "homepage": "https://github.com/romac/react-sortable",
+  "peerDependencies": {
+    "react": "^0.10.0"
+  },
+  "devDependencies": {
+    "browserify": "^4.1.5",
+    "reactify": "^0.13.1",
+    "react": "^0.10.0"
+  }
+}

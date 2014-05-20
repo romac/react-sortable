@@ -1,22 +1,25 @@
 /** @jsx React.DOM */
 
-var App = React.createClass({
-  getInitialState: function() {
-    return {data: this.props.data};
-  },
-  sort: function(colors, dragging) {
-    var data = this.state.data;
-    data.colors = colors;
-    data.dragging = dragging;
-    this.setState({data: data});
-  },
-  render: function() {
-    return (
-      <div id="app">
-        <SortableList data={this.state.data} sort={this.sort}/>
-        <SortableGrid data={this.state.data} sort={this.sort}/>
-        <StateView data={this.state.data}/>
-      </div>
-    )
-  }
-});
+'use strict';
+
+var React = require('react');
+var App = require('./src/App');
+
+var data = {
+  colors: [
+    "Gold",
+    "Crimson",
+    "Hotpink",
+    "Blueviolet",
+    "Cornflowerblue",
+    "Skyblue",
+    "Lightblue",
+    "Aquamarine",
+    "Burlywood"
+  ]
+};
+
+React.renderComponent(
+  <App data={data} />,
+  document.body
+);
