@@ -3,7 +3,7 @@
 A React component and mixin for creating sortable interfaces
 utilizing the HTML5 drag & drop API.
 
-Check out http://webcloud.se/react-sortable or the index.html fie of this repository
+Check out http://webcloud.se/react-sortable or the demo/ folder of this repository
 for an example implementation.
 
 
@@ -24,17 +24,23 @@ var SortableList = React.createClass({
       dragging: this.props.data.dragging
     };
   },
+  
   onSortUpdate: function(items, dragging) {
     this.setState({
       items: items,
       dragging: dragging
     });
   },
+
   render: function() {
     var items = this.props.data.items.map(function(item, i) {
-      return <SortableItem onSortUpdate={this.onSortUpdate} items={this.state.items} dragging={this.state.dragging} key={i} item={item} />
+      return <SortableItem onSortUpdate={this.onSortUpdate}
+                          items={this.state.items}
+                          dragging={this.state.dragging}
+                          key={i}
+                          item={item} />;
     }, this);
-    return <ol>{items}</ol>
+    return <ol>{items}</ol>;
   }
 });
 
@@ -74,14 +80,18 @@ Apart from the `onSortUpdate` method, there are a few other properties that can 
 
 ### Required properties
 
-- key (integer) | Used internally be react but also by react-sortable to maintain sorting order
-- array (items) | The list of items to render
-- item (object) | The value/label inside the component
+| Name | Type | Description
+| -----|------|------------
+| key | `integer` | Used internally be react but also by react-sortable to maintain sorting order
+| items | `array` | The list of items to render
+| item | `object` | The value/label inside the component
 
 ### Optional properties
 
-- dragging (number) | The key/id of the node currently being dragged
-- tagName (string) | Default: LI, the HTML element the component will output
-- className (string) | A string of one or multiple CSS classes
-- style (object) | Inline styles
+| Name | Type | Description
+| -----|------|------------
+| dragging | `number` | The key/id of the node currently being dragged
+| tagName | `string` | Default: LI, the HTML element the component will output
+| className | `string` | A string of one or multiple CSS classes
+| style | `object` | Inline styles
 

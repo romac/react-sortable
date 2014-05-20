@@ -4,7 +4,7 @@
   "description": "A React component and mixin for creating sortable interfaces utilizing the HTML5 drag & drop API.",
   "main": "index.js",
   "scripts": {
-    "demo": "./node_modules/.bin/browserify -t reactify demo/app.js > demo/bundle.js",
+    "build-demo": "./node_modules/.bin/browserify -t reactify demo/app.js > demo/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
