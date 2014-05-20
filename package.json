@@ -1,6 +1,6 @@
 {
   "name": "react-sortable",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A React component and mixin for creating sortable interfaces utilizing the HTML5 drag & drop API.",
   "main": "index.js",
   "scripts": {
