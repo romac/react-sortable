@@ -9,7 +9,7 @@ var App = React.createClass({
   getInitialState: function() {
     return {data: this.props.data};
   },
-  sort: function(colors, dragging) {
+  onSortUpdate: function(colors, dragging) {
     var data = this.state.data;
     data.colors = colors;
     data.dragging = dragging;
@@ -18,8 +18,8 @@ var App = React.createClass({
   render: function() {
     return (
       <div id="app">
-        <SortableList data={this.state.data} sort={this.sort}/>
-        <SortableGrid data={this.state.data} sort={this.sort}/>
+        <SortableList data={this.state.data} onSortUpdate={this.onSortUpdate}/>
+        <SortableGrid data={this.state.data} onSortUpdate={this.onSortUpdate}/>
         <StateView data={this.state.data}/>
       </div>
     )

@@ -13,7 +13,7 @@ var SortableList = React.createClass({
       return (
         <SortableItem tagName="li"
                       className="item"
-                      sort={this.props.sort}
+                      onSortUpdate={this.props.onSortUpdate}
                       items={this.props.data.colors}
                       dragging={this.props.data.dragging}
                       key={i}

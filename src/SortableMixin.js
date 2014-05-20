@@ -6,10 +6,10 @@ module.exports = {
   update: function(to, from) {
     var items = this.props.items;
     items.splice(to, 0, items.splice(from, 1)[0]);
-    this.props.sort(items, to);
+    this.props.onSortUpdate(items, to);
   },
   sortEnd: function() {
-    this.props.sort(this.props.items, undefined);
+    this.props.onSortUpdate(this.props.items, undefined);
   },
   sortStart: function(e) {
     this.dragged = e.currentTarget.dataset.id;

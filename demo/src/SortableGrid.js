@@ -13,7 +13,7 @@ var SortableGrid = React.createClass({
       return (
         <SortableItem tagName="div"
                       style={{background: item}}
-                      sort={this.props.sort}
+                      onSortUpdate={this.props.onSortUpdate}
                       items={this.props.data.colors}
                       dragging={this.props.data.dragging}
                       key={i}
