@@ -7,6 +7,15 @@ var SortableMixin = require('./SortableMixin');
 
 var SortableItem = React.createClass({
   mixins: [SortableMixin],
+
+  getDefaultProps: function() {
+    return {
+      tagName: 'li',
+      style: {},
+      className: ''
+    };
+  },
+
   render: function() {
     return (
       React.DOM[this.props.tagName]({
