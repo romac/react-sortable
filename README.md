@@ -13,19 +13,26 @@ Here's a basic example of sortable list implementation using the **SortableItem*
 
 ```js
 /** @jsx React.DOM */
+
+var React = require('react');
+var SortableItem = require('react-sortable').SortableItem;
+
 var SortableList = React.createClass({
   getInitialState: function() {
-    return {data: this.props.data};
+    return {
+      items: this.props.data.items,
+      dragging: this.props.data.dragging
+    };
   },
   sort: function(items, dragging) {
-    var data = this.state;
-    data.items = items;
-    data.dragging = dragging;
-    this.setState({data: data});
+    this.setState({
+      items: items,
+      dragging: dragging
+    });
   },
   render: function() {
     var items = this.props.data.items.map(function(item, i) {
-      return <SortableItem sort={this.sort} data={this.state} key={i} item={item} />
+      return <SortableItem sort={this.sort} items={this.state.items} dragging={this.state.dragging} key={i} item={item} />
     }, this);
     return <ol>{items}</ol>
   }
@@ -68,7 +75,8 @@ Apart from the sort method, there are a few other properties that can be passed 
 ### Required properties
 
 - key (integer) | Used internally be react but also by react-sortable to maintain sorting order
-- data (object) | The overall state of the app (usually this.state)
+- array (items) | The list of items to render
+- dragging (number) | The index of the item currently being dragged
 - item (object) | The value/label inside the component
 
 ### Optional properties
