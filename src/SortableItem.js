@@ -26,7 +26,7 @@ var SortableItem = React.createClass({
         onDragEnd: this.sortEnd,
         onDragOver: this.dragOver,
         onDragStart: this.sortStart
-      }, React.DOM.span({}, this.props.item))
+      }, this.props.item)
     );
   }
 });
