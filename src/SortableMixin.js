@@ -2,6 +2,8 @@
 
 'use strict';
 
+var utils = require('./utils');
+
 module.exports = {
   update: function(to, from) {
     var items = this.props.items;
@@ -28,12 +30,14 @@ module.exports = {
   },
   dragOver: function(e) {
     e.preventDefault();
-    var over = e.currentTarget
-    var relY = e.clientY - over.offsetTop;
+
+    var over = e.currentTarget;
+    var relY = utils.getRelativeCoordinates(e, over).y;
     var height = over.offsetHeight / 2;
+
     this.move(over, relY > height);
   },
   getClassName: function() {
-    return (this.props.key == this.props.dragging) ? 'dragging' : '';
+    return (this.props.key === this.props.dragging) ? 'dragging' : '';
   }
 };
