@@ -1,7 +1,8 @@
 
 'use strict';
 
-module.exports = {
-  SortableMixin: require('./src/SortableMixin'),
-  SortableItem: require('./src/SortableItem')
-};
+var SortableItem = require('./src/SortableItem');
+SortableItem.SortableMixin = require('./src/SortableMixin');
+SortableItem.SortableItem = SortableItem;
+
+module.exports = SortableItem;
