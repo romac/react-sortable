@@ -1,4 +1,4 @@
-# React Sortable
+# React Sortable (bis)
 
 A React component and mixin for creating sortable interfaces
 utilizing the HTML5 drag & drop API.
@@ -6,6 +6,14 @@ utilizing the HTML5 drag & drop API.
 Check out http://webcloud.se/react-sortable or the demo/ folder of this repository
 for an example implementation.
 
+**Note:** This is a fork of the [react-sortable](https://github.com/danielstocks/react-sortable), made by the talented [@danielstocks](https://github.com/).  
+This fork mainly add support for npm, as well as few optimizations, but lags behind in other ways. If you do not need npm support, please use the original library.
+
+## Installation
+
+As this package isn't released on npm (yet?), you must install it from GitHub:
+
+    $ npm install --save "git://github.com/romac/react-sortable-bis.git#v0.2.2"
 
 ## Basic Usage
 
@@ -15,7 +23,7 @@ Here's a basic example of sortable list implementation using the **SortableItem*
 /** @jsx React.DOM */
 
 var React = require('react');
-var SortableItem = require('react-sortable').SortableItem;
+var SortableItem = require('react-sortable-bis').SortableItem;
 
 var SortableList = React.createClass({
   getInitialState: function() {
