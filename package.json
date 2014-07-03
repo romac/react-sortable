@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/romac/react-sortable.git"
+    "url": "https://github.com/romac/react-sortable-bis.git"
   },
   "keywords": [
     "react",
@@ -21,9 +21,9 @@
   ],
   "license": "???",
   "bugs": {
-    "url": "https://github.com/romac/react-sortable/issues"
+    "url": "https://github.com/romac/react-sortable-bis/issues"
   },
-  "homepage": "https://github.com/romac/react-sortable",
+  "homepage": "https://github.com/romac/react-sortable-bis",
   "peerDependencies": {
     "react": "^0.10.0"
   },
