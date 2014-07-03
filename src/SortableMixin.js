@@ -2,8 +2,6 @@
 
 'use strict';
 
-var utils = require('./utils');
-
 module.exports = {
   update: function(to, from) {
     var items = this.props.items;
@@ -17,10 +15,10 @@ module.exports = {
     this.dragged = e.currentTarget.dataset.id;
     e.dataTransfer.effectAllowed = 'move';
   },
-  move: function(over,append) {
+  move: function(over, after) {
     var to = +over.dataset.id;
     var from = this.props.dragging || +this.dragged;
-    if(append) {
+    if(after) {
       to += 1;
     }
     if(from < to) {
@@ -32,7 +30,7 @@ module.exports = {
     e.preventDefault();
 
     var over = e.currentTarget;
-    var relY = utils.getRelativeCoordinates(e, over).y;
+    var relY = e.clientY - over.getBoundingClientRect().top;
     var height = over.offsetHeight / 2;
 
     this.move(over, relY > height);
