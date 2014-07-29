@@ -1,6 +1,6 @@
 {
   "name": "react-sortable-bis",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A React component and mixin for creating sortable interfaces utilizing the HTML5 drag & drop API.",
   "main": "index.js",
   "scripts": {
@@ -25,14 +25,14 @@
   },
   "homepage": "https://github.com/romac/react-sortable-bis",
   "peerDependencies": {
-    "react": "^0.10.0"
+    "react": ">=0.10"
   },
   "devDependencies": {
-    "browserify": "^4.1.5",
-    "reactify": "^0.13.1",
-    "react": "^0.10.0"
+    "browserify": ">=4.1",
+    "reactify": ">=0.13",
+    "react": ">=0.10"
   },
   "dependencies": {
-    "lodash.throttle": "^2.4.1"
+    "lodash.throttle": "*"
   }
 }
